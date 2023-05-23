@@ -1,13 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'ホーム画面')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>ホーム画面</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>オレンジ、グレープ、チョコレート、バニラ味のアイスを扱っています</p>
+    <div class="text-center mt-3">
+        <img src="{{ asset('/images/home-aice.jpg') }}" alt="アイス商品画像">
+    </div>
 @stop
 
 @section('css')

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Routing\RouteGroup;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,33 +16,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Auth::routes();
-// ホム画面
+// ホーム画面
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 // 商品一覧画面
-Route::get('/home/item', [App\Http\Controllers\ItemController::class, 'index'])->name('list');
+Route::get('/home/item', [App\Http\Controllers\HomeController::class, 'list'])->name('list');
 // 商品一覧画面 検索機能
-Route::get('/home/search', [App\Http\Controllers\ItemController::class, 'search'])->name('search');
+Route::get('/home/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
 // 商品詳細画面
-Route::get('/home/detail/{id}', [App\Http\Controllers\ItemController::class, 'detail'])->name('detail');
+Route::get('/home/detail/{id}', [App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
 
 
-Route::prefix('items')->group(function () {
+// 管理者しかアクセスできない
+Route::group(['middleware' => 'admin'], function () {
     // 管理者画面
-    Route::get('/master', [App\Http\Controllers\ItemController::class, 'master'])->name('master');
+    Route::get('/item/master', [App\Http\Controllers\ItemController::class, 'master'])->name('master');
     // 商品登録画面
-    Route::get('/add', [App\Http\Controllers\ItemController::class, 'add'])->name('create');
+    Route::get('/item/ItemCreate', [App\Http\Controllers\ItemController::class, 'ItemCreate'])->name('ItemCreate');
     // 商品登録機能
-    Route::post('/add', [App\Http\Controllers\ItemController::class, 'add'])->name('register');
+    Route::post('/item/ItemRegister', [App\Http\Controllers\ItemController::class, 'ItemRegister'])->name('ItemRegister');
     // 商品編集画面
-    Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit'])->name('edit');
+    Route::get('/item/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit'])->name('edit');
     // 商品編集機能
-    Route::post('/update/{id}', [App\Http\Controllers\ItemController::class, 'update'])->name('update');
+    Route::post('/item/update/{id}', [App\Http\Controllers\ItemController::class, 'update'])->name('update');
     // 商品削除機能
-    Route::get('/delete/{id}', [App\Http\Controllers\ItemController::class, 'delete'])->name('delete');
+    Route::get('/item/delete/{id}', [App\Http\Controllers\ItemController::class, 'delete'])->name('delete');
 });

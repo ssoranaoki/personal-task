@@ -230,9 +230,11 @@ return [
             'route'  => 'list',
             'icon' => 'fas fa-gamepad',
         ],[
+            // 一般userの時は非表示
             'text' => '管理者',
             'route'  => 'master',
             'icon' => 'fas fa-gamepad',
+            'can' => 'admin',
         ],
 
         // AdminLTEデフォルト

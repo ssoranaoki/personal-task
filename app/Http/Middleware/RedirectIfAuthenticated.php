@@ -7,6 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+// 管理者しかアクセスできないルート
 class RedirectIfAuthenticated
 {
     /**
@@ -22,7 +23,7 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
+            if (Auth::guard($guard)->check() && Auth::user()->administrator != 1) {
                 return redirect(RouteServiceProvider::HOME);
             }
         }
