@@ -20,7 +20,7 @@ use Illuminate\Routing\RouteGroup;
 
 Auth::routes();
 // ホーム画面
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('ForceHttpsMiddleware::class');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware(ForceHttpsMiddleware::class);
 // 商品一覧画面
 Route::get('/home/item', [App\Http\Controllers\HomeController::class, 'list'])->name('list');
 // 商品一覧画面 検索機能
