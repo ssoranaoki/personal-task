@@ -25,10 +25,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        
+
         // https
         if (\App::environment(['production']) || \App::environment(['develop'])) {
             \URL::forceScheme('https');
         }
+
+        // ページネーション2ページ目以降のhttps化
+        $this->app['request']->server->set('HTTPS','on');
     }
 }
