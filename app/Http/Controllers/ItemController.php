@@ -85,7 +85,7 @@ class ItemController extends Controller
             ]);
 
             // 管理者画面に遷移
-            return redirect()->route('master');
+            return redirect()->route('master')->with('RegisterMessage', '商品登録しました');
     }
 
     /**
@@ -146,7 +146,7 @@ class ItemController extends Controller
         ]);
 
         // 管理者画面に遷移
-        return redirect()->route('master');
+        return redirect()->route('master')->with('UpdateMessage', '商品更新しました');
     }
 
     /**
@@ -161,6 +161,6 @@ class ItemController extends Controller
         $item->delete();
 
         // 管理者画面に遷移
-        return redirect()->route('master');
+        return redirect()->route('master')->with('DeleteMessage', '商品削除しました');
     }
 }

@@ -4,6 +4,11 @@
 
 @section('content_header')
     <h1>ホーム画面</h1>
+    @if (session('LoginMessage'))
+        <div class="alert alert-success">
+            {{ session('LoginMessage') }}
+        </div>
+    @endif
 @stop
 
 @section('content')

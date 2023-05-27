@@ -12,6 +12,18 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">商品一覧</h3>
+                        {{-- アラートメッセージ --}}
+                        @if (session('RegisterMessage') || session('UpdateMessage') || session('DeleteMessage'))
+                            <div class="alert alert-success">
+                                @if (session('RegisterMessage'))
+                                    {{ session('RegisterMessage') }}
+                                @elseif (session('UpdateMessage'))
+                                    {{ session('UpdateMessage') }}
+                                @elseif (session('DeleteMessage'))
+                                    {{ session('DeleteMessage') }}
+                                @endif
+                            </div>
+                        @endif
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
