@@ -3,7 +3,7 @@
 @section('title', '商品一覧')
 
 @section('content_header')
-    <h1>商品一覧</h1>
+    <h1>商品一覧画面</h1>
     {{-- 絞り込み検索 --}}
     <h6 class="mt-3">検索したい商品の情報を入力して下さい</h6>
     <div>

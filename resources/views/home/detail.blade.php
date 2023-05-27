@@ -44,6 +44,7 @@
                     <label for="price" class="d-block">価格</label>
                     <td>{{ $item['price'] }}</td><span>円</span>
                 </div>
+                <label for="">商品画像</label>
                 <img src="data:image/png;base64,{{ $item['image'] }}" alt="商品画像" style="max-width:200px; max-height:200px;">
             </div>
         </div>

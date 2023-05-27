@@ -3,7 +3,7 @@
 @section('title', '商品編集')
 
 @section('content_header')
-    <h1>商品編集</h1>
+    <h1>商品編集画面</h1>
 @stop
 
 @section('content')
@@ -18,6 +18,11 @@
                     </ul>
                 </div>
             @endif
+
+            {{-- 商品登録画面に遷移 --}}
+            <div style="text-align: right;">
+                <a href="{{ route('ItemCreate') }}" class="btn btn-primary">商品登録</a>
+            </div>
 
             <div class="card card-primary">
                 <form method="POST" action="{{ route('update', ['id' => $item['id']]) }}" enctype="multipart/form-data">
