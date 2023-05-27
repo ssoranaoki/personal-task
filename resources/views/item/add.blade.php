@@ -32,7 +32,7 @@
                         <div class="form-group">
                             <label for="type" class="d-block">カテゴリー</label>
                             <select class="form-select" name="type">
-                                <option value="" selected>カテゴリーを選んでください</option>
+                                <option value="" selected>カテゴリーを選択してください</option>
                                 <option value="1" {{ old('type') == 1 ? 'selected' : '' }}>オレンジ</option>
                                 <option value="2" {{ old('type') == 2 ? 'selected' : '' }}>グレープ</option>
                                 <option value="3" {{ old('type') == 3 ? 'selected' : '' }}>チョコレート</option>
