@@ -4,6 +4,26 @@
 
 @section('content_header')
     <h1>管理者画面</h1>
+    {{-- 絞り込み検索 --}}
+    <h6 class="mt-3">検索したい商品の情報を入力して下さい</h6>
+    <div>
+        <form method="GET" action="{{ route('ItemSearch') }}" class="d-block">
+            <select name="category" class="col-4">
+                <option value="" hidden>カテゴリーを選択してください</option>
+                <option value="1">オレンジ</option>
+                <option value="2">グレープ</option>
+                <option value="3">チョコレート</option>
+                <option value="4">バニラ</option>
+            </select>
+            <div class="form-group col-6">
+                <input type="text" maxlength="20" name="keyword" class="form-control" value=""
+                    placeholder="キーワードを入力してください（20文字以内）">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="検索" class="btn btn-info" style="margin-left: 15px; color:white;">
+            </div>
+        </form>
+    </div>
 @stop
 
 @section('content')
@@ -76,7 +96,8 @@
                         </tbody>
                     </table>
                 </div>
-                {{ $items->links() }}
+                {{-- ページネーション --}}
+                {{ $items->links('pagination::bootstrap-4') }}
             </div>
         </div>
     </div>

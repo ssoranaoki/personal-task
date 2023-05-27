@@ -76,6 +76,8 @@
                         </tbody>
                     </table>
                 </div>
+                {{-- ページネーション --}}
+                {{ $items->links('pagination::bootstrap-4') }}
             </div>
         </div>
     </div>

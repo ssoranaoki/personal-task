@@ -33,6 +33,8 @@ Route::get('/home/detail/{id}', [App\Http\Controllers\HomeController::class, 'de
 Route::group(['middleware' => 'admin'], function () {
     // 管理者画面
     Route::get('/item/master', [App\Http\Controllers\ItemController::class, 'master'])->name('master');
+    // 管理者画面　検索機能
+    Route::get('/item/ItemSearch', [App\Http\Controllers\ItemController::class, 'ItemSearch'])->name('ItemSearch');
     // 商品登録画面
     Route::get('/item/ItemCreate', [App\Http\Controllers\ItemController::class, 'ItemCreate'])->name('ItemCreate');
     // 商品登録機能

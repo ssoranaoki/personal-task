@@ -23,11 +23,64 @@ class ItemController extends Controller
      * 管理者画面
      */
 
-    public function master()
+    public function master(Request $request)
     {
-        $items = Item::orderBy('updated_at', 'DESC')->paginate(10);
+        // 検索キーワードとカテゴリを取得
+        $keyword = $request->input('keyword');
+        $category = $request->input('category');
 
-        return view('item.master', compact('items'));
+        // クエリ作成
+        $query = Item::query();
+        $query->orderBy('updated_at', 'DESC');
+
+        // 商品一覧取得
+        $items = $query->paginate(10)->appends(['keyword' => $keyword, 'category' => $category]);
+
+        return view('item.master', compact('items', 'keyword', 'category'));
+    }
+
+    /**
+     * 絞り込み検索
+     */
+
+    public function ItemSearch(Request $request)
+    {
+        //検索フォームに入力された値を取得
+        $keyword = $request->input('keyword');
+        //セレクトボックスから指定された値を取得
+        $category = $request->input('category');
+        // dd($category, $keyword);
+
+        // クエリ作成
+        $query = Item::query();
+
+        // セレクトボックスだけの値で検索
+        if (isset($category) && empty($keyword)) {
+            $query->where('type', 'like', $category);
+        }
+
+        // キーワードだけの値で検索
+        if (isset($keyword) && empty($category)) {
+            $query->where('name', 'like', '%' . $keyword . '%')
+                ->orWhere('type', 'like', '%' . $keyword . '%')
+                ->orWhere('price', 'like', '%' . $keyword . '%');
+        }
+
+        // セレクトボックスの値とキーワードの値で検索
+        if (isset($keyword) && isset($category)) {
+            $query->where('type', $category)
+                ->where(function ($query) use ($keyword) {
+                    $query->orWhere('name', 'like', '%' . $keyword . '%')
+                        ->orWhere('type', 'like', '%' . $keyword . '%')
+                        ->orWhere('price', 'like', '%' . $keyword . '%');
+                });
+        }
+
+        // 実行
+        $items = $query->orderBy('updated_at', 'DESC')->paginate(10)->appends(['keyword' => $keyword, 'category' => $category]);
+
+        // ビューへ結果を渡す
+        return view('item.master', compact('items', 'keyword', 'category'));
     }
 
     /**
