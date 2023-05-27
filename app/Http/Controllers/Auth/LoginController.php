@@ -62,7 +62,7 @@ class LoginController extends Controller
         // バリデーションが成功した場合はログイン処理を行う
         if (Auth::attempt($data)) {
             // ログイン成功の処理を追加
-            return redirect()->intended('/home')->with('LoginMessage', 'ログインしました');
+            return redirect()->intended('/')->with('LoginMessage', 'ログインしました');
         }
 
         // ログインが失敗した場合はエラーメッセージを表示してリダイレクトさせる
@@ -91,5 +91,17 @@ class LoginController extends Controller
             'password.required' => 'パスワードは必須項目です。',
             'password.min' => 'パスワードは8文字以上で入力してください。',
         ]);
+    }
+
+    // ログアウト機能
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login')->with('logout', 'ログアウトしました');
     }
 }
