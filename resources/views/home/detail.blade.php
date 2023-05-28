@@ -4,6 +4,16 @@
 
 @section('content_header')
     <h1>商品詳細画面</h1>
+    {{-- 商品登録画面に遷移 --}}
+    @can('admin')
+    <div style="text-align: right;">
+        <a href="{{ route('ItemCreate') }}" class="btn btn-primary mb-1">商品登録</a>
+    </div>
+    {{-- 商品編集画面に遷移 --}}
+    <div style="text-align: right;">
+        <button type="button" class="btn btn-primary"onclick="location.href='{{ route('edit', ['id' => $item['id']]) }}'">編集</button>
+    </div>
+    @endcan
 @stop
 
 @section('content')

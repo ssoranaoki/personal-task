@@ -32,13 +32,22 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">商品一覧</h3>
+                    @can('admin')
+                    <div class="card-tools">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-append">
+                                <a href="{{ route('ItemCreate') }}" class="btn btn-default">商品登録</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endcan
                 </div>
                 <div class="card-body table-responsive p-0">
                     <table class="table table-hover text-nowrap">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>名前</th>
+                                <th>商品名</th>
                                 <th>カテゴリー</th>
                                 <th>価格</th>
                             </tr>
@@ -76,9 +85,9 @@
                         </tbody>
                     </table>
                 </div>
-                {{-- ページネーション --}}
-                {{ $items->links('pagination::bootstrap-4') }}
             </div>
+            {{-- ページネーション --}}
+            {{ $items->links('pagination::bootstrap-4') }}
         </div>
     </div>
 @stop
