@@ -17,7 +17,7 @@
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control" name="name"
-                                        value="{{ old('name') }}" autocomplete="name" autofocus>
+                                        value="{{ old('name') }}" maxlength="100" autocomplete="name" autofocus>
 
                                     @if ($errors->has('name'))
                                         <div class="alert alert-danger">{{ $errors->first('name') }}</div>
@@ -31,7 +31,7 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control" name="email"
-                                        value="{{ old('email') }}" autocomplete="email">
+                                        value="{{ old('email') }}" maxlength="191" autocomplete="email">
 
                                     @if ($errors->has('email'))
                                         <div class="alert alert-danger">{{ $errors->first('email') }}</div>
