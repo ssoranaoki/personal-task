@@ -101,7 +101,7 @@ class ItemController extends Controller
                 'name' => 'required|max:100',
                 'type' => 'required',
                 'detail' => 'required|max:500',
-                'image' => 'nullable|image|max:64',
+                'image' => 'nullable|image|max:47',
                 'price' => 'required|numeric|min:1',
             ], [
                 'name.required' => '商品名を入力してください。',
@@ -111,7 +111,7 @@ class ItemController extends Controller
                 'price.numeric' => '価格は数字で入力してください。',
                 'price.min' => '価格は1以上で入力してください。',
                 'image.image' => '画像ファイルを選択してください。',
-                'image.max' => '画像ファイルのサイズは64KB以下である必要があります。',
+                'image.max' => '画像ファイルのサイズは47KB以下である必要があります。',
             ]);
 
             // 画面で入力されたデータを受け取る
@@ -162,7 +162,7 @@ class ItemController extends Controller
             'name' => 'required|max:100',
             'type' => 'required',
             'detail' => 'required|max:500',
-            'image' => 'nullable|image|max:64',
+            'image' => 'nullable|image|max:47',
             'price' => 'required|numeric|min:1',
         ], [
             'name.required' => '商品名を入力してください。',
@@ -172,7 +172,7 @@ class ItemController extends Controller
             'price.numeric' => '価格は数字で入力してください。',
             'price.min' => '価格は1以上で入力してください。',
             'image.image' => '画像ファイルを選択してください。',
-            'image.max' => '画像ファイルのサイズは64KB以下である必要があります。',
+            'image.max' => '画像ファイルのサイズは47KB以下である必要があります。',
         ]);
 
         $data = $request->all();

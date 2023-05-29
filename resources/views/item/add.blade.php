@@ -51,7 +51,7 @@
                             <label for="image">商品画像</label>
                             <input type="file" name="image" class="form-control" value="{{ old('image') }}"
                                 onchange="previewImage(this);">
-                            <small class="form-text text-muted">画像ファイルのサイズは64KB以下にしてください。</small>
+                            <small class="form-text text-muted">画像ファイルのサイズは47KB以下にしてください。</small>
 
                             {{-- プレビュー表示エリア --}}
                             <img id="preview" src="" alt="商品画像"

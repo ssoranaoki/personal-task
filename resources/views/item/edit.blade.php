@@ -56,7 +56,7 @@
                             <img src="data:image/png;base64,{{ $item['image'] }}" alt="商品画像"
                                 style="max-width:200px; max-heigth:200px;">
                             <input type="file" name="image" class="form-control" onchange="previewImage(this);">
-                            <small class="form-text text-muted">画像ファイルのサイズは64KB以下にしてください。</small>
+                            <small class="form-text text-muted">画像ファイルのサイズは47KB以下にしてください。</small>
 
                             {{-- プレビュー表示エリア --}}
                             <label class="form-label d-block">更新する商品画像</label>
