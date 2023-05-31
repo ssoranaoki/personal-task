@@ -1,35 +1,37 @@
-## 商品管理システム
+# アイス商品管理システム
+## 概要
+このシステムでは自社で扱うアイス商品の管理を行う事ができます。<br>
+このシステムには商品登録、編集、削除機能。絞り込み検索機能やアカウント登録、ログイン機能があります。<br>
+管理者アカウントと一般userアカウントに分け、利用できる機能、閲覧できるページに違いがあります。
+管理者アカウントには権限があり全てのページ、機能が利用できます。<br>
+一般userアカウントは商品の閲覧と絞り検索機能だけ利用できます。
+## 主な機能
+- ログイン・ログアウト機能
+- ホーム画面
+- 商品一覧画面
+- 商品詳細画面
+- 管理者画面
+- 商品登録画面
+- 商品編集画面
+- 商品新規登録、編集、削除機能
+- 画像アップロード機能
+- 画像プレビュー機能
+- 商品絞り込み検索機能
+## 開発環境
+PHP 8.2.4<br>
+MySQL 8.0.25<br>
+Laravel 8.83.27
+## 設計書
+[設計書ページへ](https://docs.google.com/spreadsheets/d/1allEPvI2OA5Kp9c4mqwp3Ce_rh6B3Yeb/edit#gid=796158240)
+## システム閲覧
+[アプリケーションページへ](https://personal-task.herokuapp.com/login)
+### テストアカウント情報
+管理者アカウント<br>
+メールアドレス：naoki@gmail.com<br>
+パスワード：aiueo5599<br>
+一般userアカウント<br>
+メールアドレス：ao@gmail.com<br>
+パスワード：blue5599
 
-### 環境構築手順
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLかPostgreSQLのデータベース作成（名前：item_management）  
-  ローカルでMAMPを使用しているのであれば、MySQL推奨
-* .env にデータベース接続情報追加
-```
-例）
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=item_management
-DB_USERNAME=root
-DB_PASSWORD=root
-```
-* APP_KEY生成
-```
-$ php artisan key:generate
-```
-* Composerインストール
-```
-$ composer install
-```
-* フロント環境構築
-```
-$ npm install
-$ npm run dev
-```
-* マイグレーション
-```
-$ php artisan migrate
-```
+
