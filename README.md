@@ -22,7 +22,11 @@ PHP 8.2.4<br>
 MySQL 8.0.25<br>
 Laravel 8.83.27
 ## 設計書
-[設計書ページへ](https://docs.google.com/spreadsheets/d/1allEPvI2OA5Kp9c4mqwp3Ce_rh6B3Yeb/edit#gid=796158240)
+[要件定義書ページへ](https://docs.google.com/spreadsheets/d/1O_Q0WFTqGzdqZrbxo36CNpP_nRCz3vjT/edit#gid=803554806)<br>
+[基本設計書ページへ](https://docs.google.com/spreadsheets/d/1allEPvI2OA5Kp9c4mqwp3Ce_rh6B3Yeb/edit#gid=796158240)<br>
+[画面設計者ページへ](https://docs.google.com/spreadsheets/d/1HUXtB3RYeTOpHoDAJaL-hYmnDESbwuBP/edit#gid=1458052482)<br>
+[データベース定義書ページへ](https://docs.google.com/spreadsheets/d/1-7HG4d_kOQRDNOUIBDMbfHQph3jlVmDL/edit#gid=845202842)<br>
+[テスト仕様書兼報告書ページへ](https://docs.google.com/spreadsheets/d/1F8sOGz0cmm1gn9dQ_e_8aO2xAyo5StIk/edit#gid=784287600)
 ## システム閲覧
 [アプリケーションページへ](https://personal-task.herokuapp.com/login)
 ### テストアカウント情報
