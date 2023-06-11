@@ -29,6 +29,7 @@ Laravel 8.83.27
 [テスト仕様書兼報告書ページへ](https://docs.google.com/spreadsheets/d/1F8sOGz0cmm1gn9dQ_e_8aO2xAyo5StIk/edit#gid=784287600)
 ## システム閲覧
 [アプリケーションページへ](https://personal-task.herokuapp.com/login)
+<img width="1258" alt="スクリーンショット 自主制作" src="https://github.com/ssoranaoki/portfolio-personal/assets/75925354/3930ebe7-b86d-41cb-be01-384bc4e3f8ed">
 ### テストアカウント情報
 管理者アカウント<br>
 メールアドレス：naoki@gmail.com<br>
